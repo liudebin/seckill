@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--<classPathEntry location="/Users/chenchang/shell/pay/target/pay-app/WEB-INF/lib/mysql-connector-java-5.1.38.jar"/>-->
+    <!--<classPathEntry-->
+    <!--location="/Users/jiangdongxian/Downloads/apache-maven-3.3.9/jar/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>-->
+    <!--<classPathEntry location="/Users/xukezhi/maven/repo/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>-->
+    <!--<classPathEntry location="/Users/zyb/maven/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>-->
+    <!--<classPathEntry location="/Users/liuguobin/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>-->
+    <context id="mysqltables" targetRuntime="MyBatis3">
+
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <commentGenerator type="qian.ling.yi.seckill.util.mybatisGe.MyCommentGenerator">
+            <!--<property name="suppressDate" value="true" />-->
+            <!--&lt;!&ndash; 是否去除自动生成的注释 true：是 ： false:否 &ndash;&gt;-->
+            <!--<property name="suppressAllComments" value="true" />-->
+        </commentGenerator>
+        <!--数据库链接地址账号密码 -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;
+                        allowMultiQueries=true&amp;serverTimezone=GMT%2B8" userId="root" password="liudebin-1990"/>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置 targetPackage 需要自定义 目录自动生成 basePackage -->
+        <javaModelGenerator targetPackage="qian.ling.yi.seckill.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置 targetPackage 需要自定义 目录自动生成 basePackage-->
+        <javaClientGenerator targetPackage="qian.ling.yi.seckill.mapper" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table tableName="tb_p2p_record_product" domainObjectName="P2PRecordProduct"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_merchant_config" domainObjectName="MerchantConfig"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_product_info" domainObjectName="P2PProductInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_product" domainObjectName="P2PRecordProduct"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql"/>-->
+        <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="MySql"  />&ndash;&gt;-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_order" domainObjectName="P2POrder"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_log" domainObjectName="P2PRecordLog"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_order" domainObjectName="P2POrder"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_order" domainObjectName="P2POrder"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_repayment" domainObjectName="P2PRecordRepayment"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_recharge" domainObjectName="P2PRecordRecharge"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_withdraw" domainObjectName="P2PRecordWithdraw"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_ebank" domainObjectName="P2PRecordEBank"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_trustee" domainObjectName="P2PRecordTrustee"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_ebank" domainObjectName="P2PRecordEBank"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_freeze" domainObjectName="P2PRecordFreeze"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_log" domainObjectName="P2PRecordLog"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_product" domainObjectName="P2PRecordProduct"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_recharge" domainObjectName="P2PRecordRecharge"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_repayment" domainObjectName="P2PRecordRepayment"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_withdraw" domainObjectName="P2PRecordWithdraw"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_p2p_file_detail_bonus" domainObjectName="P2PBonusFileDetail"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--<columnOverride column="bo_expect_cat" jdbcType="TINYINT"
+        javaType="java.lang.Integer" />-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_file_data_batch" domainObjectName="P2PFileDataBatch"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_file" domainObjectName="P2PFile"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_withdraw" domainObjectName="P2PRecordWithdraw"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_pay_mq" domainObjectName="payMq"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<table tableName="tb_p2p_file_detail_repayment" domainObjectName="P2PRepaymentFileDetail"&ndash;&gt;-->
+        <!--&lt;!&ndash;enableCountByExample="false" enableUpdateByExample="false"&ndash;&gt;-->
+        <!--&lt;!&ndash;enableDeleteByExample="false" enableSelectByExample="false"&ndash;&gt;-->
+        <!--&lt;!&ndash;selectByExampleQueryId="false">&ndash;&gt;-->
+        <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_recharge" domainObjectName="P2PRecordRecharge"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+
+        <!--<table tableName="tb_p2p_record_withdraw" domainObjectName="P2PRecordWithdraw"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_transfer" domainObjectName="P2PRecordTransfer"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+
+        <!--<table tableName="tb_p2p_file_detail_repayment_temp" domainObjectName="P2PFileDetailRepaymentTemp"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_file_detail_bonus_res" domainObjectName="P2PBonusResFileDetail"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_factoring" domainObjectName="P2PRecordFactoring"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_file_detail_repayment" domainObjectName="P2PRepaymentFileDetail"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_file_detail_repayment_res" domainObjectName="P2PRepaymentFileDetailRes"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+
+        <!--<table tableName="tb_p2p_file_detail_debt" domainObjectName="P2PDebtFileDetail"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_p2p_file_detail_full_bid" domainObjectName="P2PFullBidFileDetail"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_file_detail_full_bid_res" domainObjectName="P2PFullBidResFileDetail"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_p2p_code_dict" domainObjectName="P2PCodeDict"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_record_product" domainObjectName="P2PRecordProduct"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table> -->
+        <!--<table tableName="tb_file_log" domainObjectName="FileLog"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_pay_threshold" domainObjectName="PayThreshold"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+
+        <!--<table tableName="tb_channel_fee" domainObjectName="ChannelFee"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_channel_info" domainObjectName="ChannelInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_record_account" domainObjectName="PayFinancialRecordAccount"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="bcdc_financial_account_info" domainObjectName="BcdcFinancialAccountInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="merchant_auth_relation" domainObjectName="MerchantAuthRelation"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="bcdc_bank_card_info" domainObjectName="BcdcBankCardInfo"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="bcdc_bank_card_auth" domainObjectName="BcdcBankCardAuth"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_pay_financial_order" domainObjectName="PayFinancialOrder"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_record" domainObjectName="PayFinancialRecord"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_channel_transport" domainObjectName="ChannelTransport"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true" />-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_record_log" domainObjectName="PayFinancialRecordLog"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_withdraw_order" domainObjectName="WithDrawOrder"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_withdraw_record" domainObjectName="PayFinancialRecordWithdraw"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_withdraw_record_log" domainObjectName="WithDrawRecordLog"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_p2p_retry" domainObjectName="P2PRetry"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_retry" domainObjectName="PayFinancialRetry"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_record_repayment" domainObjectName="PayFinancialRecordRepayment"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_record_auth" domainObjectName="PayFinancialRecordAuth"-->
+            <!--enableCountByExample="false" enableUpdateByExample="false"-->
+            <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+            <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_token" domainObjectName="PayFinancialToken"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+        <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_pay_cache" domainObjectName="PayCache"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_pay_financial_record_bid" domainObjectName="PayFinancialRecordBid"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_pay_schedule_detail" domainObjectName="PayScheduleDetail"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="tb_pay_financial_withdraw_refund" domainObjectName="PayFinancialWithdrawRefund"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_record_log" domainObjectName="AssistRecordLog"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_channel_field_convert" domainObjectName="ChannelFieldConvert"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_record_auth" domainObjectName="AssistRecordAuth"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_down_file_info" domainObjectName="downFileInfo"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_record_bid" domainObjectName="AssistRecordBid"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_auth_pre" domainObjectName="AssistAuthPre"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_record_credit" domainObjectName="AssistRecordCredit"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_record_open" domainObjectName="AssistRecordOpen"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_retry" domainObjectName="AssistRetry"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="pay_transmit_record" domainObjectName="TransmitRecord"-->
+        <!--<table tableName="tb_p2p_record_callback" domainObjectName="P2PRecordCallback"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_record_transfer" domainObjectName="AssistRecordTransfer"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_assist_order" domainObjectName="AssistOrder"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_biz_pre" domainObjectName="P2PBizPre"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_channel_account_snapshot" domainObjectName="ChannelAccountSnapshot"-->
+        <!--<table tableName="tb_financial_record_callback" domainObjectName="FinancialRecordCallback"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="payFinancialRecordWithdraw" domainObjectName="PayFinancialRecordWithdraw"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_pay_financial_full_record" domainObjectName="PayFinancialFullRecord"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_file_detail_debt_repayment" domainObjectName="P2pFileDetailDebtRepayment"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="pojo" domainObjectName="Pojo"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--&lt;!&ndash;<columnOverride column="bo_expect_cat" jdbcType="TINYINT"-->
+            <!--javaType="java.lang.Integer" />&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="tb_p2p_biz_pre" domainObjectName="P2PBizPre"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+
+            <!--<columnOverride column="bo_expect_cat" jdbcType="TINYINT"
+            javaType="java.lang.Integer" />-->
+        <!--</table>-->
+        <!--<table tableName="bcdc_bank_card_info" domainObjectName="BcdcBankCardInfo"
+              enableCountByExample="false" enableUpdateByExample="false"
+              enableDeleteByExample="false" enableSelectByExample="false"
+              selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+           <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+       </table>
+       <table tableName="bcdc_bank_card_auth" domainObjectName="BcdcBankCardAuth"
+              enableCountByExample="false" enableUpdateByExample="false"
+              enableDeleteByExample="false" enableSelectByExample="false"
+              selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+           <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+       </table>
+       <table tableName="merchant_auth_relation" domainObjectName="MerchantAuthRelation"
+              enableCountByExample="false" enableUpdateByExample="false"
+              enableDeleteByExample="false" enableSelectByExample="false"
+              selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+           <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+       </table>
+       <table tableName="bcdc_bank_card_sign_water_info" domainObjectName="BankCardSignRecordInfo"
+              enableCountByExample="false" enableUpdateByExample="false"
+              enableDeleteByExample="false" enableSelectByExample="false"
+              selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+           <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+       </table>-->
+        <!--
+          <table tableName="bf_sign_call_log" domainObjectName="BfSignCallLog"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <columnOverride column="request" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <columnOverride column="response" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <columnOverride column="original_req" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <columnOverride column="original_resp" jdbcType="VARCHAR" javaType="java.lang.String" />
+        </table>
+        <table tableName="bcdc_bank_card_sign_water_info" domainObjectName="BankCardSignRecordInfo"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+             <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+             <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+         </table>
+         <table tableName="mmc_plat_merchant_info" domainObjectName="PlatMerchantInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">st
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+        <table tableName="mmc_merchant_channel_relation" domainObjectName="MerchantChannelRelation"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+        <table tableName="mmc_plat_merchant_info" domainObjectName="PlatMerchantInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+
+         <table tableName="mmc_merchant_group_info" domainObjectName="MerchantGroupInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+        <table tableName="mmc_merchant_channel_relation" domainObjectName="MerchantChannelRelation"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+        <table tableName="agree_pay_order_record" domainObjectName="AgreePayOrderRecord"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+        <table tableName="agree_pay_share_record" domainObjectName="AgreePayShareRecord"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+        <table tableName="agree_pay_share_sub_record" domainObjectName="AgreePayShareSubRecord"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+
+        -->
+        <!--<table tableName="agree_pay_share_record" domainObjectName="AgreePayShareRecord"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>-->
+            <!--<columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />-->
+        <!--</table>-->
+
+        <table tableName="trd_order" domainObjectName="TrdOrder"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+            <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </table>
+
+
+    </context>
+ </generatorConfiguration>

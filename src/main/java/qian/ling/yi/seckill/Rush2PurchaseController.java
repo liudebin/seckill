@@ -1,9 +1,11 @@
 package qian.ling.yi.seckill;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import qian.ling.yi.seckill.model.TrdOrder;
+import qian.ling.yi.seckill.service.Rush2PurchaseService;
 
 /**
  * TODO
@@ -12,12 +14,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author: guobin.liu@holaverse.com
  */
 
-@Controller
+@RestController
 public class Rush2PurchaseController {
 
-    @GetMapping("seckill")
-    @ResponseBody
-    String seckill(@RequestParam("rowKey") String rowKey) {
-        return "seckill";
+    @Autowired
+    Rush2PurchaseService rush2PurchaseService;
+
+    @RequestMapping("seckill")
+//    @ResponseBody
+    int seckill(@RequestParam("productId") String productId) {
+        TrdOrder trdOrder = new TrdOrder();
+        trdOrder.setTrdNo("1");
+        trdOrder.setRemark("test1");
+        return rush2PurchaseService.add(trdOrder);
     }
+
 }
